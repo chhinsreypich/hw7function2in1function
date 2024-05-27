@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // import 'package:western/widgets/navBar.dart';
 
@@ -23,7 +23,7 @@ class _ItemsWidget5State extends State<ItemsWidget5> {
   // decrement quatity
   void decrementQuantity() {
     setState(() {
-      if (quantityCount > 0) {
+      if (quantityCount > 1) {
         quantityCount--;
       }
     });
@@ -103,115 +103,117 @@ class _ItemsWidget5State extends State<ItemsWidget5> {
 
       children: [
         for(int i = 17; i < 21; i++)
-          Container(
-            padding : EdgeInsets.symmetric (vertical : 5, horizontal : 10),
-            margin : EdgeInsets.symmetric(vertical : 7, horizontal : 15),
-            decoration : BoxDecoration(
-              borderRadius: BorderRadius.circular (20),
-              color : Colors.black12,
-              boxShadow: [
-                BoxShadow(
-                  color : Colors.black.withOpacity(0.4,),
-                  spreadRadius : 1,
-                  blurRadius : 8,
-                ),
-                
-              ],
-            ),
-            child : Column(
-              children: [
-                //1
-                
-                InkWell(
-                  onTap : (){
-                    Navigator.pushNamed(context, 'singleItemPage');
-                  },
-                  child : Container(
-                    margin : EdgeInsets.all(10),
-                    child : Image.asset(
-                      "lib/images/${i + 1}.png",
-                      width : 120,
-                      height : 130,
-                      fit : BoxFit.cover,
-                    ),
+          SingleChildScrollView(
+            child: Container(
+              padding : EdgeInsets.symmetric (vertical : 5, horizontal : 10),
+              margin : EdgeInsets.symmetric(vertical : 7, horizontal : 15),
+              decoration : BoxDecoration(
+                borderRadius: BorderRadius.circular (20),
+                color : Colors.black12,
+                boxShadow: [
+                  BoxShadow(
+                    color : Colors.black.withOpacity(0.4,),
+                    spreadRadius : 1,
+                    blurRadius : 8,
                   ),
-                ),
-                Padding(
-                  padding : EdgeInsets.only(top : 5, bottom : 2),
-                  child : Container(
-                    alignment : Alignment.centerLeft,
-                    child : Text(
-                      itemNames[i],
-                      style : TextStyle(
-                        fontSize : 18,
-                        fontWeight : FontWeight.bold,
-                        color : Colors.white,
+                  
+                ],
+              ),
+              child : Column(
+                children: [
+                  //1
+                  
+                  InkWell(
+                    onTap : (){
+                      Navigator.pushNamed(context, 'singleItemPage');
+                    },
+                    child : Container(
+                      margin : EdgeInsets.all(10),
+                      child : Image.asset(
+                        "lib/images/${i + 1}.png",
+                        width : 120,
+                        height : 130,
+                        fit : BoxFit.cover,
                       ),
                     ),
                   ),
-                ),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    description[i], 
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w200,
-                      color: Colors.white,
+                  Padding(
+                    padding : EdgeInsets.only(top : 5, bottom : 2),
+                    child : Container(
+                      alignment : Alignment.centerLeft,
+                      child : Text(
+                        itemNames[i],
+                        style : TextStyle(
+                          fontSize : 18,
+                          fontWeight : FontWeight.bold,
+                          color : Colors.white,
+                        ),
+                      ),
                     ),
                   ),
-                ),
-
-                SizedBox( height : 20),
-                Container(
-                  alignment: Alignment.topLeft,
-                  child: Row(
-                    mainAxisAlignment : MainAxisAlignment.spaceBetween, // To make the row fit its content
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 95, 112, 142),
-                          borderRadius: BorderRadius.circular(18), // Circular shape with radius 18
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.2), // Shadow color with opacity
-                              spreadRadius: 2, // Spread radius
-                              blurRadius: 5, // Blur radius
-                              offset: Offset(0, 3), // Offset of the shadow
-                            ),
-                          ],
-                        ),
-                        height: 35,
-                        width: 55,
-                        alignment: Alignment.center,
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 5, bottom: 2),
-                          child: Text(
-                            price[i],
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.white,
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      description[i], 
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w200,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+            
+                  SizedBox( height : 20),
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Row(
+                      mainAxisAlignment : MainAxisAlignment.spaceBetween, // To make the row fit its content
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 95, 112, 142),
+                            borderRadius: BorderRadius.circular(18), // Circular shape with radius 18
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.2), // Shadow color with opacity
+                                spreadRadius: 2, // Spread radius
+                                blurRadius: 5, // Blur radius
+                                offset: Offset(0, 3), // Offset of the shadow
+                              ),
+                            ],
+                          ),
+                          height: 35,
+                          width: 55,
+                          alignment: Alignment.center,
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 5, bottom: 2),
+                            child: Text(
+                              price[i],
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      SizedBox(width: 8), // Add some space between the container and the icon
-                      IconButton(
-                        onPressed: () {
-                          /// bottom sheet pop up
-                          customShowBottomSheet(context, i);
-                        },
-                        icon: const Icon(Icons.add),
-                        style: IconButton.styleFrom(
-                            backgroundColor: Color.fromARGB(255, 25, 181, 113)),
-                      ),
-                    ],
+                        SizedBox(width: 8), // Add some space between the container and the icon
+                        IconButton(
+                          onPressed: () {
+                            /// bottom sheet pop up
+                            customShowBottomSheet(context, i);
+                          },
+                          icon: const Icon(Icons.add),
+                          style: IconButton.styleFrom(
+                              backgroundColor: Color.fromARGB(255, 25, 181, 113)),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                
-                
-              ],
+                  
+                  
+                ],
+              ),
             ),
           ),
         
@@ -226,7 +228,7 @@ class _ItemsWidget5State extends State<ItemsWidget5> {
         builder: (BuildContext context) {
           return Container(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            height: 500,
+            height: 550,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -272,6 +274,7 @@ class _ItemsWidget5State extends State<ItemsWidget5> {
                     Text(
                       price[i],
                       style: TextStyle(
+                        color: Colors.red,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
@@ -284,7 +287,8 @@ class _ItemsWidget5State extends State<ItemsWidget5> {
                           IconButton(
                             onPressed: decrementQuantity,
                             icon: Icon(
-                              Icons.remove_circle,
+                              Icons.remove_circle_outline_outlined,
+                              color: const Color.fromARGB(255, 120, 116, 116),
                               size: 30,
                             ),
                           ),
@@ -342,4 +346,3 @@ class _ItemsWidget5State extends State<ItemsWidget5> {
         });
   }
 }
-
