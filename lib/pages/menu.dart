@@ -1,11 +1,11 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:profile/widgets/itemsWidget.dart';
-import 'package:profile/widgets/itemsWidget2.dart';
-import 'package:profile/widgets/itemsWidget3.dart';
-import 'package:profile/widgets/itemsWidget4.dart';
-import 'package:profile/widgets/itemsWidget5.dart';
+import 'package:flutter_application_1/widgets/itemsWidget.dart';
+import 'package:flutter_application_1/widgets/itemsWidget2.dart';
+import 'package:flutter_application_1/widgets/itemsWidget3.dart';
+import 'package:flutter_application_1/widgets/itemsWidget4.dart';
+import 'package:flutter_application_1/widgets/itemsWidget5.dart';
 
 
 class MenuPage extends StatelessWidget {
