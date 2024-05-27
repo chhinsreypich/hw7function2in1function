@@ -1,12 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // import 'package:western/widgets/navBar.dart';
 
 class ItemsWidget4 extends StatefulWidget {
   @override
-  State<ItemsWidget4> createState() => _ItemsWidget4State();
+  State<ItemsWidget4> createState() => _ItemsWidget3State();
 }
 final List<String> options = [
   "Normal Sugar",
@@ -15,7 +15,7 @@ final List<String> options = [
   "No Sugar",
 ];
 
-class _ItemsWidget4State extends State<ItemsWidget4> {
+class _ItemsWidget3State extends State<ItemsWidget4> {
   @override
 
       int quantityCount = 1;
@@ -78,24 +78,21 @@ class _ItemsWidget4State extends State<ItemsWidget4> {
 
     // List of item names
     final List<String> itemNames = [
-      "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7",
-      "Item 8", "Item 9", "Item 10", "Item 11", "Item 12", "13",
-      "Iced Chocolate", "Milk Tea", "Olong Milktea", "Ovaltine", "18",
+      "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7","88", "ee", "kk", 
+      "Iced Green Tea", "Passion Tea", "Oolong Tea", "Item 11", "Item 12", "Item 13", "Item 14"
     ];
 
     final List<String> description = [
-      "Description 1", "Description 2", "Description 3", "Description 4", "Description 5", "Description 6", "Description 7",
-      "Description 8", "Description 9", "Description 10", "Description 11", "Description 12","13", 
-      "chocolate syrup or cocoa powder, milk, and ice",
-      "black tea with milk and sweeteners",
-      "A tea-based drink made with oolong tea",
-      "milk drink with cocoa and malt extract", "18",
+      "Description 1", "Description 2", "Description 3", "Description 4", "Description 5", "Description 6", "Description 7","ds 88", "ds ee", " ds kk", 
+      "Refreshing green tea served over ice",
+      "A vibrant, tropical blend of hibiscus and fruit flavors",
+      "Smooth oolong tea topped with a creamy milk foam",
+      "Description 11", "Description 12", "Description 13", "Description 14"
     ];
 
     final List<String> price = [
-      "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7",
-      "Item 8", "Item 9", "Item 10", "Item 11", "Item 12", "13",
-      "\$1.50", "\$1.50", "\$1.75", "\$1", "18",
+      "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7","88", "ee", "kk", 
+      "\$1.50", "\$1.50", "\$1.75", "Item 11", "Item 12", "Item 13", "Item 14"
     ];
 
   Widget build ( BuildContext context){
@@ -105,7 +102,7 @@ class _ItemsWidget4State extends State<ItemsWidget4> {
       childAspectRatio:  0.70,
 
       children: [
-        for(int i = 13; i < 17; i++)
+        for(int i = 10; i < 13; i++)
           Container(
             padding : EdgeInsets.symmetric (vertical : 5, horizontal : 10),
             margin : EdgeInsets.symmetric(vertical : 7, horizontal : 15),
@@ -132,8 +129,8 @@ class _ItemsWidget4State extends State<ItemsWidget4> {
                   child : Container(
                     margin : EdgeInsets.all(10),
                     child : Image.asset(
-                      "lib/images/${i+1}.png",
-                      width : 130,
+                      "lib/images/${i + 1}.png",
+                      width : 120,
                       height : 130,
                       fit : BoxFit.cover,
                     ),
@@ -156,7 +153,7 @@ class _ItemsWidget4State extends State<ItemsWidget4> {
                 Container(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    "${description[i]}", 
+                    description[i], 
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w200,
@@ -229,7 +226,7 @@ class _ItemsWidget4State extends State<ItemsWidget4> {
         builder: (BuildContext context) {
           return Container(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            height: 500,
+            height: 550,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -366,6 +363,7 @@ class _ItemsWidget4State extends State<ItemsWidget4> {
                       price[i],
                       style: TextStyle(
                         fontSize: 20,
+                        color: Colors.red,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -435,4 +433,3 @@ class _ItemsWidget4State extends State<ItemsWidget4> {
         });
   }
 }
-
