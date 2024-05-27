@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 class ItemsWidget3 extends StatefulWidget {
   @override
-  State<ItemsWidget3> createState() => _ItemsWidget3State();
+  State<ItemsWidget3> createState() => _IItemsWidget3State();
 }
 final List<String> options = [
   "Normal Sugar",
@@ -15,7 +15,7 @@ final List<String> options = [
   "No Sugar",
 ];
 
-class _ItemsWidget3State extends State<ItemsWidget3> {
+class _IItemsWidget3State extends State<ItemsWidget3> {
   @override
 
       int quantityCount = 1;
@@ -162,7 +162,7 @@ class _ItemsWidget3State extends State<ItemsWidget3> {
                   ),
                 ),
 
-                SizedBox( height : 20),
+                SizedBox( height : 15),
                 Container(
                   alignment: Alignment.topLeft,
                   child: Row(
@@ -187,7 +187,7 @@ class _ItemsWidget3State extends State<ItemsWidget3> {
                         child: Padding(
                           padding: EdgeInsets.only(top: 5, bottom: 2),
                           child: Text(
-                            "${price[i]}",
+                            price[i],
                             style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.w400,
@@ -226,7 +226,7 @@ class _ItemsWidget3State extends State<ItemsWidget3> {
         builder: (BuildContext context) {
           return Container(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            height: 500,
+            height: 550,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -362,6 +362,7 @@ class _ItemsWidget3State extends State<ItemsWidget3> {
                     Text(
                       price[i],
                       style: TextStyle(
+                        color: Colors.red,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
@@ -432,4 +433,3 @@ class _ItemsWidget3State extends State<ItemsWidget3> {
         });
   }
 }
-
