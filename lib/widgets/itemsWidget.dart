@@ -109,7 +109,7 @@ class _ItemsWidgetState extends State<ItemsWidget> {
         builder: (BuildContext context) {
           return Container(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            height: 500,
+            height: 550,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -246,6 +246,7 @@ class _ItemsWidgetState extends State<ItemsWidget> {
                       price[i],
                       style: TextStyle(
                         fontSize: 20,
+                        color: Colors.red,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -331,18 +332,18 @@ class _ItemsWidgetState extends State<ItemsWidget> {
       children: [
         for (int i = 0; i < 7; i++)
           Container(
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-            margin: EdgeInsets.symmetric(vertical: 7, horizontal: 15),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Color.fromARGB(255, 94, 134, 143),
-              // color: Colors.white,
+            padding : EdgeInsets.symmetric (vertical : 5, horizontal : 10),
+            margin : EdgeInsets.symmetric(vertical : 7, horizontal : 15),
+            decoration : BoxDecoration(
+              borderRadius: BorderRadius.circular (20),
+              color : Colors.black12,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  spreadRadius: 1,
-                  blurRadius: 8,
+                  color : Colors.black.withOpacity(0.1,),
+                  spreadRadius : 1,
+                  blurRadius : 8,
                 ),
+                
               ],
             ),
             child: Column(
